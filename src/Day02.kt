@@ -1,13 +1,12 @@
-import javax.lang.model.type.NullType
 
 fun main() {
-  var winning_combo_lookup = mapOf("rock" to "scissors", "scissors" to "paper", "paper" to "rock")
+  val winning_combo_lookup = mapOf("rock" to "scissors", "scissors" to "paper", "paper" to "rock")
   val shape_score_lookup = mapOf("rock" to 1, "paper" to 2, "scissors" to 3)
 
   fun charToShape(input: String): String{
-    var rockArray = arrayOf("A", "X")
-    var paperArray = arrayOf("B", "Y")
-    var scissorArray = arrayOf("C", "Z")
+    val rockArray = arrayOf("A", "X")
+    val paperArray = arrayOf("B", "Y")
+    val scissorArray = arrayOf("C", "Z")
 
     if ( rockArray.contains(input)){
       return "rock"
@@ -41,13 +40,13 @@ fun main() {
     }
     if (response == "X") {
       // you should lose, so I should not have the current or the winning shape
-      var myShape = winning_combo_lookup.get(counterShape)
+      val myShape = winning_combo_lookup.get(counterShape)
       shapeScore = shape_score_lookup.getOrDefault(myShape,0)
     }
     if (response == "Z") {
       // you should win
-      var lookupPos = winning_combo_lookup.values.indexOf(counterShape)
-      var myShape = winning_combo_lookup.keys.elementAt(lookupPos)
+      val lookupPos = winning_combo_lookup.values.indexOf(counterShape)
+      val myShape = winning_combo_lookup.keys.elementAt(lookupPos)
       shapeScore = shape_score_lookup.getOrDefault(myShape,0)
       matchScore = 6
     }
@@ -74,7 +73,7 @@ fun main() {
     input.map{
 
       var entries = it.split(" ")
-      
+
       var player1_choice = charToShape(entries[0])
       var player2_choice = charToShape(entries[1])
 
