@@ -69,6 +69,14 @@ fun partTwo(input: List<String>): Int {
 fun main(){
   val test_input = readInput("2023/resources/input/day02_test")
   val game_input = readInput("2023/resources/input/day02_gameresults")
+
+  // Test the input
+  val testOne = partOne(test_input)
+  val testTwo = partTwo(test_input)
+  println("Testing ... ")
+  assert(testOne == 8)
+  assert(testTwo == 2286)
+  println("Tested! ")
   var res = partOne(game_input)
   println("Part one result: $res")
 
