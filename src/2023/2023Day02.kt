@@ -1,5 +1,6 @@
 
 data class GameResult (val ID: Int, val resultset: Map<String, Int>)
+
 private fun calculateGameResult(it: String): GameResult{
   val (gamestr, setsstr) = it.split(":")
   var maxes = mutableMapOf<String, Int>()
@@ -77,6 +78,7 @@ fun main(){
   assert(testOne == 8)
   assert(testTwo == 2286)
   println("Tested! ")
+
   var res = partOne(game_input)
   println("Part one result: $res")
 
